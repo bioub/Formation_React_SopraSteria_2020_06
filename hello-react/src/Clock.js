@@ -10,12 +10,15 @@ class Clock extends Component {
   }
   componentDidMount() {
     const { delay = 1000 } = this.props;
-    setInterval(() => {
+    this._interval = setInterval(() => {
       // Object.assign
       this.setState({
         now: new Date(),
       });
     }, delay);
+  }
+  componentWillUnmount() {
+    clearInterval(this._interval);
   }
   render() {
     const { now } = this.state;

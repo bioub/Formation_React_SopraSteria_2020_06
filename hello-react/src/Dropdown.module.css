@@ -1,0 +1,20 @@
+.host {
+
+}
+
+.selected {
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.menu {
+  border: 1px solid black;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.item {
+  padding: 5px;
+}
