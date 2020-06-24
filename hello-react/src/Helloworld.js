@@ -1,12 +1,23 @@
-/*
-<div class="Helloworld">
-  <div>Prénom : <input></div>
-  <div>Hello Romain !</div>
-</div>
+import React, { Component } from 'react';
 
-Créer un composant React Helloworld
-en se basant sur le HTML précédent.
+class Helloworld extends Component {
+  state = {
+    prenom: 'Romain',
+  };
+  handleChange = (event) => {
+    this.setState({ prenom: event.target.value });
+  };
+  render() {
+    const { prenom = '' } = this.state;
+    return (
+      <div className="Helloworld">
+        <div>
+          Prénom : <input value={prenom} onChange={this.handleChange} />
+        </div>
+        <div>Hello {prenom} !</div>
+      </div>
+    );
+  }
+}
 
-Ecouter la saisie dans le champs input
-et au changement de valeur afficher Hello (valeur saisie) !
-*/
+export default Helloworld;

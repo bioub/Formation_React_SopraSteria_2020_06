@@ -5,6 +5,7 @@ import Clock from './Clock';
 import CounterV1 from './CounterV1';
 import CounterV2 from './CounterV2';
 import CounterV3 from './CounterV3';
+import Helloworld from './Helloworld';
 
 function App() {
   const prenom = 'Romain';
@@ -16,6 +17,7 @@ function App() {
       <CounterV1 />
       <CounterV2 />
       <CounterV3 />
+      <Helloworld />
     </div>
   );
 }
