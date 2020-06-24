@@ -2,7 +2,9 @@ import React from 'react';
 import './App.css';
 import Hello from './Hello';
 import Clock from './Clock';
-import Counter from './Counter';
+import CounterV1 from './CounterV1';
+import CounterV2 from './CounterV2';
+import CounterV3 from './CounterV3';
 
 function App() {
   const prenom = 'Romain';
@@ -11,7 +13,9 @@ function App() {
       <Hello name="Romain" />
       <Hello name={prenom} />
       <Clock delay={3000} />
-      <Counter />
+      <CounterV1 />
+      <CounterV2 />
+      <CounterV3 />
     </div>
   );
 }
