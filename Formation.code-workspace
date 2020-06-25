@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "javascript"
+		},
+		{
+			"path": "todo-react"
 		}
 	]
 }

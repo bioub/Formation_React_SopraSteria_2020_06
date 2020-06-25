@@ -25,4 +25,4 @@ Contact.prototype.hello = function () {
 
 const romain = new Contact('Romain');
 console.log(romain._name); // Romain
-romain.hello(); // Hello my name is Romain
+romain.hello(); // Hello (object) my name is Romain

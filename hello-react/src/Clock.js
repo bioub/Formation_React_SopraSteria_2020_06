@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { format } from 'date-fns';
 
 class Clock extends Component {
   constructor() {
     super();
     this.state = {
-      format: 'HH:mm:ss',
+      format: 'HH:mm',
       now: new Date(),
     };
   }
@@ -21,10 +22,10 @@ class Clock extends Component {
     clearInterval(this._interval);
   }
   render() {
-    const { now } = this.state;
+    const { now, format: formatDate } = this.state;
     return (
       <div className="Clock">
-        {now.toLocaleTimeString()}
+        {format(now, format)}
       </div>
     );
   }  
