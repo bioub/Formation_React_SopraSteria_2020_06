@@ -1,6 +1,6 @@
 # Exercice Redux
 
-## Créer un nouveau todo-redux 
+## Créer un nouveau projet todo-redux 
 
 En reprenant soit votre code, soit la correction (plus simple car TodoForm est un composant controllé)
 
