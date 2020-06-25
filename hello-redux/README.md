@@ -1,8 +1,8 @@
 # Exercice Redux
 
-## Installer les dépendances
+## Créer un nouveau todo-redux 
 
-`npm install` pour réinstaller le contenu de `package-lock.json`
+En reprenant soit votre code, soit la correction (plus simple car TodoForm est un composant controllé)
 
 ## Installer redux
 
