@@ -7,7 +7,7 @@ function CounterV2() {
   const step = useSelector(selectStep);
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
-
+  
   return (
     <div className="Counter">
       <label>
@@ -20,5 +20,13 @@ function CounterV2() {
     </div>
   );
 }
+
+// function CounterContainerV2() {
+//   // const step = useSelector(selectStep);
+//   // const count = useSelector(selectCount);
+//   // const dispatch = useDispatch();
+
+//   return <CounterV2 step={step}></CounterV2>
+// }
 
 export default CounterV2;

@@ -3,12 +3,17 @@ const redux = require("redux");
 
 const initialState = { count: 0, step: 1 };
 
-const INCREMENT = 'INCREMENT';
-const DECREMENT = 'DECREMENT';
-const SET_STEP = 'SET_STEP';
+const INCREMENT = "INCREMENT";
+const DECREMENT = "DECREMENT";
+const SET_STEP = "SET_STEP";
 
 // Reducer doit être immuable
 // const nextState = reducer(state, action);
+
+// Pure function
+// - prédictive (toujours meme retour si memes params)
+// - elle ne modifie ses params
+// - elle n'a de side effects (requete ajax, local storage...)
 function reducer(state = initialState, action) {
   switch (action.type) {
     case INCREMENT:
@@ -16,12 +21,12 @@ function reducer(state = initialState, action) {
         ...state,
         count: state.count + state.step,
       };
-      case DECREMENT:
+    case DECREMENT:
       return {
         ...state,
         count: state.count - state.step,
       };
-      case SET_STEP:
+    case SET_STEP:
       return {
         ...state,
         step: action.step,

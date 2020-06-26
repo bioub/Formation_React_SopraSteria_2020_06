@@ -11,6 +11,12 @@
 // arrow function
 const Hello = (name = '') => `Hello ${name} !`;
 
+// function createObjet() {
+//   return {};
+// }
+
+// const createObjet = () => ({});
+
 const prenoms = ['Jean', 'Paul'];
 
 prenoms.forEach((name = '') => console.log(`Hello ${name} !`));

@@ -34,7 +34,7 @@ export function stepReducer(state = initialState.step, {type, payload = 1}) {
 //     case SET_STEP:
 //       return {
 //         ...state,
-//         step: stepReducer(state.count, action),
+//         step: stepReducer(state.step, action),
 //       };
 //     default:
 //       return state;
