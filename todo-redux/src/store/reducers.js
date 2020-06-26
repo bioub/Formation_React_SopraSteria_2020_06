@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { TODO_CHANGE, TODO_ADD, TODO_DELETE, TODO_TOGGLE_ALL_COMPLETED, TODO_UPDATE, TODO_FILTER_CHANGE } from './constants';
+import { TODO_CHANGE, TODO_ADD, TODO_DELETE, TODO_TOGGLE_ALL_COMPLETED, TODO_UPDATE, TODO_FILTER_CHANGE, TODO_FETCH_SUCCESS } from './constants';
 import { createReducer, nanoid } from '@reduxjs/toolkit';
 import { modify } from '../utilities/immutable-array';
 
@@ -53,8 +53,8 @@ const todosReducer = createReducer(initialState.todos, {
   [TODO_DELETE]: (state, {payload}) => state.filter((todo) => todo.id !== payload.id),
   [TODO_UPDATE]: (state, {payload}) => modify(state, payload, state.findIndex((t) => t.id === payload.id)),
   [TODO_TOGGLE_ALL_COMPLETED]: (state, {payload}) => state.map((todo) => ({...todo, completed: payload})),
+  [TODO_FETCH_SUCCESS]: (state, {payload}) => payload,
 });
-
 
 const filterReducer = createReducer(initialState.filter, {
   [TODO_FILTER_CHANGE]: (state, {payload}) => payload,

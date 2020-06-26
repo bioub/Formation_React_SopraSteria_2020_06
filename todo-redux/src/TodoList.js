@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import TodoItem from './TodoItem';
 import { selectTodosFiltered } from './store/selectors';
 import { useSelector, useDispatch } from 'react-redux';
-import { todoDelete, todoUpdate } from './store/actions';
+import { todoDelete, todoUpdate, todoFetch } from './store/actions';
 
-function TodoList({ items = [], onDelete = () => {}, onChange = () => {} }) {
+
+function TodoList({ items = [], onDelete = () => {}, onChange = () => {}, onLoad = () => {} }) {
+  // equivalent componentDidMount (+ componentDidUpdate sans tableau) (+componentWillUnmout avec une fonction de retour) avec les hooks
+  useEffect(() => {
+    // console.log('effect')
+    onLoad();
+    // return () => {
+    //   // componentWillUnmout
+    // }
+  }, []);
+
   return (
     <div className="TodoList">
       {items.map((it) => (
-        <TodoItem key={it.id} item={it} onDelete={onDelete} onChange={onChange} />
+        <TodoItem
+          key={it.id}
+          item={it}
+          onDelete={onDelete}
+          onChange={onChange}
+        />
       ))}
     </div>
   );
@@ -26,7 +41,11 @@ function TodoListContainer() {
     dispatch(todoUpdate(todo));
   }
 
-  return <TodoList items={items} onDelete={onDelete} onChange={onChange} />
+  function onLoad() {
+    dispatch(todoFetch());
+  }
+
+  return <TodoList items={items} onDelete={onDelete} onChange={onChange} onLoad={onLoad} />;
 }
 
 export default TodoListContainer;

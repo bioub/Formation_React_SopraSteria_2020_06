@@ -28,6 +28,7 @@ export const selectTodosFiltered = createSelector(
   selectFilter,
   selectTodos,
   (filter, todos) => {
+    console.log('call selectTodosFiltered');
     if (filter === 'Completed') {
       return todos.filter((t) => t.completed);
     }
@@ -47,7 +48,7 @@ export function selectFilter(state) {
 // memoized selector (met en cache le retour tant que les params sont
 // identiques)
 export const selectItemsLeft = createSelector(selectTodos, (todos) => {
-  console.log('selectItemsLeft');
+  console.log('call selectItemsLeft');
   return todos.filter((t) => !t.completed).length;
 });
 
